@@ -3,11 +3,16 @@ package main
 import (
 	"AlliancesDocking/config"
 	"AlliancesDocking/data"
+	"AlliancesDocking/gin"
+	"time"
 )
 
 func main() {
 	//generate.GenGenerate()
 	config.Configinit()
-	data.InitCacheData()
-
+	// 初始化服务器
+	services.Serviceinit()
+	time.Sleep(200 * time.Millisecond)
+	data.SystemDataInit()
+	select {}
 }
