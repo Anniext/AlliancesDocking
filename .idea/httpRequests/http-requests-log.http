@@ -1,3 +1,21 @@
+GET http://127.0.0.1:8080/api/cache/LoadRoomData
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T014110.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/cache/LoadRoomData
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-13T231017.200.json
+
+###
+
 GET http://127.0.0.1:5500/api/cache/LoadRoomData
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)

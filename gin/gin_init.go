@@ -11,16 +11,15 @@ import (
 )
 
 var (
-	router *gin.Engine
-	api    *RouterGroup
-	//FileManager RouterManager
-
+	router       *gin.Engine
+	api          *RouterGroup
 	CacheManager CacheInterface
 )
 
 type CacheInterface interface {
 	SetCache()
 	LoadRoomData(c *gin.Context)
+	GetRoomData()
 }
 
 func init() {
@@ -29,6 +28,7 @@ func init() {
 
 func RouterGroupInit() {
 	router = gin.Default()
+	gin.SetMode(config.GetConfig().Dev.Router.Mode)
 	router.Use(DevCors()) //使用自定义的跨域中间件
 	api = &RouterGroup{router.Group("/api")}
 	CacheManager = &RouterGroup{api.Group("/cache")}
@@ -36,29 +36,30 @@ func RouterGroupInit() {
 
 func Serviceinit() {
 	query.SetDefault(func() *gorm.DB {
-		db, err := gorm.Open(mysql.Open(config.Configs.Dev.Dsn), &gorm.Config{})
+		db, err := gorm.Open(mysql.Open(config.GetConfig().Dev.Dsn), &gorm.Config{})
 		if err != nil {
-			log.Println("Failed to connect to database:", err)
+			config.GetLog().Error.Println("Failed to connect to database:", err)
 		}
 		return db
-	}()) //初始化数据库
+	}())                 //初始化数据库
 	GroupInit()          // 初始化路由
 	go StartMainServer() // 启动主服务
 
-}
-
-func StartMainServer() {
-	err := http.ListenAndServe(config.Configs.Dev.AppPort, router)
-	if err != nil {
-		log.Println("Failed to start server: ", err)
-	} else {
-		log.Println("Server started on port: ", config.Configs.Dev.AppPort)
-		return
-	}
+	CacheManager.GetRoomData()
 }
 
 func GroupInit() {
 	CacheManager.SetCache()
+}
+
+func StartMainServer() {
+	err := http.ListenAndServe(config.GetConfig().Dev.Router.Host, router)
+	config.GetLog().Info.Println(config.GetConfig().Dev.Router.Host)
+	if err != nil {
+		log.Println("Failed to start server: ", err)
+	} else {
+		log.Println("Server started on port: ", config.GetConfig().Dev.Router.Host)
+	}
 }
 
 //
