@@ -1,7 +1,7 @@
 package config
 
 import (
-	"encoding/json"
+	"github.com/bytedance/sonic"
 	"log"
 	"os"
 )
@@ -19,6 +19,10 @@ type JsonConfBody struct {
 			Host string `json:"host"`
 			Mode string `json:"mode"`
 		} `json:"router"`
+		Target struct {
+			Key  string `json:"key"`
+			Port string `json:"port"`
+		} `json:"target"`
 	} `json:"dev"`
 }
 
@@ -36,7 +40,7 @@ func (c *OptionConfig) Read() {
 		log.Println("Configuration file loaded successfully...")
 	}
 	// 解析json文件,序列化为对象
-	err = json.Unmarshal(file, &jsonConfBody)
+	err = sonic.Unmarshal(file, &jsonConfBody)
 	if err != nil {
 		log.Println("Failed to serialize json object:", err)
 	} else {

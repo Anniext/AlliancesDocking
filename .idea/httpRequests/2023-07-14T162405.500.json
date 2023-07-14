@@ -1,0 +1,16 @@
+{
+  "code": 10002,
+  "message": "TCP连接错误",
+  "data": null,
+  "success": false
+}{
+  "code": 10002,
+  "message": "TCP连接错误",
+  "data": null,
+  "success": false
+}{
+  "code": 200,
+  "message": "请求成功",
+  "data": null,
+  "success": true
+}

@@ -22,5 +22,4 @@ func (r *RouterGroup) GetRoomData() {
 	if err != nil {
 		config.GetLog().Error.Println("Failed to connect to database from avt_room:", err)
 	}
-
 }

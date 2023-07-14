@@ -1,3 +1,195 @@
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T165355.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T164836.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T162629.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T162619.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T162405.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T162224.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T162147.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T161554.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create?ip=127.0.0.1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T161349.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T161006.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T160335.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/Create
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T151721.500.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T150326.404.txt
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T140334.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T140124.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T140048.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T135511.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T135426.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-14T135131.200.json
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://127.0.0.1:8080/api/tcp/SendTcp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
 GET http://127.0.0.1:8080/api/cache/LoadRoomData
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.7)

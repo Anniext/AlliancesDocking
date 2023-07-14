@@ -1,9 +1,9 @@
 package data
 
 import (
+	"AlliancesDocking/config"
 	"AlliancesDocking/model"
 	"AlliancesDocking/query"
-	"fmt"
 	"sync"
 )
 
@@ -63,7 +63,10 @@ func NewRoomMap() *RoomMap {
 
 func LoadRoomData() (count int64, err error) {
 	var roomList []*model.AvtRoom
-	err = query.AvtRoom.Where(query.AvtRoom.IsDelete.Eq(0)).Scan(&roomList)
+	if query.AvtRoom.Where(query.AvtRoom.IsDelete.Eq(0)).Scan(&roomList) != nil {
+		config.GetLog().Error.Println("Failed to load room data from avt_room:", err)
+		return
+	}
 	count, err = query.AvtRoom.Where(query.AvtRoom.IsDelete.Eq(0)).Count()
 	if err == nil {
 		if count > 0 {
@@ -85,11 +88,11 @@ func LoadRoomData() (count int64, err error) {
 			}
 			LoadWorkerOrder()
 		} else {
-			fmt.Println("系统没有教室数据！")
+			config.GetLog().Error.Println("Failed to load room data from avt_room:", err)
 		}
 
 	} else {
-		fmt.Println("教室桩数据加载错误！")
+		config.GetLog().Error.Println("Failed to load room data from avt_room:", err)
 	}
 	return count, err
 }

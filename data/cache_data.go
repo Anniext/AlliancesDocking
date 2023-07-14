@@ -2,14 +2,10 @@ package data
 
 var (
 	CacheRoom *RoomMap
+	CacheTcp  *TcpMap
 )
 
 func SystemDataInit() {
 	CacheRoom = NewRoomMap()
-
-	_, err := LoadRoomData()
-	if err != nil {
-		return
-	}
-
+	CacheTcp = NewTcpMap()
 }

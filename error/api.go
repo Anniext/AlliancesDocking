@@ -19,7 +19,9 @@ var (
 	ErrSignParam = NewError(1003, "签名参数有误")
 
 	//功能错误
-	CacheErr = NewError(10000, "缓存错误")
+	CacheErr     = NewError(10000, "缓存错误")
+	TcpServerErr = NewError(10002, "TCP连接错误")
+	TcpSendErr   = NewError(10003, "TCP发送错误")
 
 	// 业务异常
 	UserAddFailErr        = NewError(20001, "添加用户失败")

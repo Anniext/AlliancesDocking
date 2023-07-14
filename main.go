@@ -4,6 +4,7 @@ import (
 	"AlliancesDocking/config"
 	"AlliancesDocking/data"
 	services "AlliancesDocking/gin"
+	"AlliancesDocking/system"
 	"time"
 )
 
@@ -14,5 +15,6 @@ func main() {
 	services.Serviceinit()
 	time.Sleep(200 * time.Millisecond)
 	data.SystemDataInit()
+	system.SysInit()
 	select {}
 }
