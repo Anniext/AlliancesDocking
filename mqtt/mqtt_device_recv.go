@@ -43,28 +43,40 @@ func DevicePush(c *Client, topic string, msg []byte) {
 				go RemoteConnect(ip, v)
 				config.GetLog().Info.Println("DevicePush", v)
 			}
-			rp := DevicePushRequest{
-				Event: "device_push",
-				Data: DevicePushRequestData{
-					Code: 0,
-					Body: DevicePushRequestBody{
-						Devices: req.Data.Body.Devices,
+			cnn := *data.CacheTcp.Get(ip).NetCoon
+			buffer := make([]byte, 1024)
+			n, err := cnn.Read(buffer)
+			response := string(buffer[:n])
+			if err != nil {
+				log.Println("DevicePush Read Error :", err.Error())
+				return
+			}
+			if response == "CONTROL_DEVICE  receive !Sunmnet" {
+				rp := DevicePushRequest{
+					Event: "device_push",
+					Data: DevicePushRequestData{
+						Code: 0,
+						Body: DevicePushRequestBody{
+							Devices: req.Data.Body.Devices,
+						},
+						MsgId: 0,
 					},
-					MsgId: 0,
-				},
+				}
+				jsondata, err := sonic.Marshal(&rp)
+				if err != nil {
+					log.Println("DevicePush Marshal Error :", err.Error())
+					return
+				}
+				topic := strings.Replace(topic_device_push, "+", ip, -1)
+				err = c.Publish(topic, 0, false, jsondata)
+				if err != nil {
+					config.GetLog().Error.Println("mqtt publish error!!!")
+					return
+				}
+				// 更新设备到前端
+
 			}
-			jsondata, err := sonic.Marshal(&rp)
-			if err != nil {
-				log.Println("DevicePush Marshal Error :", err.Error())
-				return
-			}
-			topic := strings.Replace(topic_device_push, "+", ip, -1)
-			err = c.Publish(topic, 0, false, jsondata)
-			if err != nil {
-				config.GetLog().Error.Println("mqtt publish error!!!")
-				return
-			}
-			// 更新设备到前端
+
 		}
 	}
 }
