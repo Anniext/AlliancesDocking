@@ -11,20 +11,9 @@ import (
 )
 
 const (
-	Topic_ping              = "Avtronsys/+/ping"
-	topic_pong              = "Avtronsys/+/pong"
-	topic_card_slots_change = "Avtronsys/+/card_slots_change"
-	topic_paycard_local     = "Avtronsys/+/paycard_local"
-	topic_paycard           = "Avtronsys/+/paycard"
-	topic_get_device        = "Avtronsys/+/get_device"
-	topic_device_push       = "Avtronsys/+/device_push"
-	topic_device_recv       = "Avtronsys/+/device_recv"
-	topic_fault_ctrl_panel  = "Avtronsys/+/fault_ctrl_panel"
-	topic_card_logs         = "Avtronsys/+/card_logs"
-	topic_update_req        = "Avtronsys/+/update_req"
-	topic_download_ready    = "Avtronsys/+/download_ready"
-	topic_download_update   = "Avtronsys/+/download_update"
-	topic_card_change       = "Avtronsys/+/card_slots_change"
+	Topic_ping        = "Avtronsys/+/ping"
+	topic_device_push = "Avtronsys/+/device_push"
+	topic_device_recv = "Avtronsys/+/device_recv"
 )
 
 type Client struct {
@@ -77,6 +66,7 @@ func MqttxServerInit() {
 		err = errors.New("mqtt connect error")
 		return
 	}
+	config.GetLog().Info.Println("mqtt connect success!!!")
 }
 
 func (client *Client) Connect() error {

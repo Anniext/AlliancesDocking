@@ -6,6 +6,7 @@ import (
 	services "AlliancesDocking/gin"
 	"AlliancesDocking/mqtt"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -13,6 +14,7 @@ func SysInit() {
 	CacheInit()
 	mqtt.MqttxServerInit()
 	TcpInit()
+	mqtt.Subscribe()
 }
 
 func CacheInit() {
@@ -31,6 +33,7 @@ func GetIPData(ip string) {
 		config.GetLog().Error.Println("Failed to connect to Tcp:", err)
 		return
 	}
+	config.GetLog().Info.Println("GetIPData Cache Sucessful!")
 	if res.StatusCode == 200 {
 		go ListenHeart(ip)
 	}
@@ -43,7 +46,9 @@ func ListenHeart(ip string) {
 		n, err := conn.Read(buffer)
 		response := string(buffer[:n])
 		if err != nil || response != "KEEPALIVESunmnet" {
-			config.GetLog().Error.Println("device is down", err)
+			//config.GetLog().Error.Println("device is down", err)
+			log.Println("device is down, ip is ", err, ip)
+			config.GetLog().Error.Println("device is down, ip is ", err, ip)
 			return
 		} else {
 			fmt.Println("device is alive")

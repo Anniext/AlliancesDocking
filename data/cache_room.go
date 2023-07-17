@@ -27,3 +27,20 @@ func (m *RoomMap) GetIP() []string {
 		return ips
 	}()
 }
+
+func (m *RoomMap) GetRoomId(ip string) (roomId int64, b bool) {
+	m.lock.RLock()
+	defer m.lock.RUnlock()
+	data, ok := m.roomIP[ip]
+	return data, ok
+}
+
+//func (m *RoomMap) UpdateEquipmentStatus(rid int64, joinNum int64, status string) {
+//	m.lock.Lock()
+//	defer m.lock.Unlock()
+//	for idx, v := range m.data[rid].Equipments {
+//		if *v.JoinNum == joinNum {
+//			m.data[rid].Equipments[idx].Status = status
+//		}
+//	}
+//}

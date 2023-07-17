@@ -1,6 +1,7 @@
 package data
 
 import (
+	"AlliancesDocking/config"
 	"AlliancesDocking/model"
 	"AlliancesDocking/query"
 )
@@ -10,5 +11,6 @@ func GetAvtEquipmentsByRoomId(rid int64) (ml []*model.AvtJoinnum, err error) {
 	if err != nil {
 		return nil, err
 	}
+	config.GetLog().Info.Println("GetAvtEquipmentsByRoomId", ml)
 	return
 }
